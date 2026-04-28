@@ -82,7 +82,7 @@ def save_pcm16(pcm_bytes: bytes, sample_rate: int, output_path: str) -> None:
     tensor = torch.from_numpy(audio.copy()).unsqueeze(0).float() / (2 ** 15)
     torchaudio.save(output_path, tensor, sample_rate)
     duration = len(audio) / sample_rate
-    logging.info("Saved %.2fs of audio (%d samples) → %s",
+    logging.info("Saved %.2fs of audio (%d samples) -> %s",
                  duration, len(audio), output_path)
 
 

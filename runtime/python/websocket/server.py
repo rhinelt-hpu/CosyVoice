@@ -68,7 +68,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Global model handle, initialised in __main__
+# Global model handle, initialized in __main__
 cosyvoice = None
 
 
@@ -88,7 +88,7 @@ def _decode_prompt_audio(audio_b64: str, target_sr: int = 16000) -> torch.Tensor
 
 
 def _safe_session_dict(session: dict) -> dict:
-    """Return a JSON-serialisable copy of the session (drop tensors)."""
+    """Return a JSON-serializable copy of the session (drop tensors)."""
     return {k: v for k, v in session.items() if k != 'prompt_audio'}
 
 
